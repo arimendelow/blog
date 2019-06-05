@@ -6,8 +6,14 @@ A blog, built using Ruby on Rails.
 | File/Folder | Purpose                                                                                                  |
 |-------------|----------------------------------------------------------------------------------------------------------|
 | app/        | Contains the controllers, models, views, helpers, mailers, channels, jobs and assets for our application.|
-| bin/        | Contains the rails script that starts our app. Can also contain other scripts that we use to setup, update, deploy, or run our application. |
-
+| bin/        | Contains the rails script that starts our app. Can also contain other scripts that we use to setup, update, deploy, or run our application.|
+| config/     | Configure our application's routes, database, etc. |
+| config.ru   | Rack configuration for Rack based servers used to start the application. See the (Rack website)[https://rack.github.io] for more info.|
+| db/         | Contains our current database schema, as well as the db migrations.|
+| Gemfile
+  Gemfile.lock| These allow us to specify what gem dependencies are needed for our Rails app. They're used by the Bundler gem. For more info, (see here)[https://bundler.io/].|
+| lib/        | Extended modules for our application.|
+| 
 
 
 ## Todo:

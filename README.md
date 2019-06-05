@@ -12,7 +12,14 @@ A blog, built using Ruby on Rails.
 | db/         | Contains our current database schema, as well as the db migrations.|
 | Gemfile Gemfile.lock | These allow us to specify what gem dependencies are needed for our Rails app. They're used by the Bundler gem. For more info, (see here)[https://bundler.io/].|
 | lib/        | Extended modules for our application.|
-| 
+| log/        | Application log files|
+| package.json| Allows us to specify what npm dependencies are needed for our Rails app. Used by Yarn.|
+| public/     | Only folder seen by the world as-is. Contains static files and compiled assets.|
+| Rakefile    | Locates and loads  tasks that can be run from the CL. Task definitions are defined throughout our Rals components. Add our own tasks by adding files to the `lib/tasks` directory.|
+| README.md   | This file! :)|
+| test/       | Unit tests, fixtures, other test apparatus.|
+| tmp/        | Cache, pid files, etc.|
+| vendor/     | A place for all 3rd-party code. Vendored gems, mostly.|
 
 
 ## Todo:

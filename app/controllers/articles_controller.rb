@@ -20,14 +20,18 @@ class ArticlesController < ApplicationController
 	end
 
 	def new
+		@article = article.new
 	end
 
 	def create
 		# Initialize the article model with its respective attributes
 		@article = Article.new(article_params) # 'article' is the model, 'Article' is the class
 
-		@article.save # Returns a boolean indicating whether the article was saved
-		redirect_to @article
+		if @article.save # Returns a boolean indicating whether the article was saved
+			redirect_to @article
+		else
+			render 'new'
+		end
 	end
 
 	private # Make sure that it can't be called outside of its intended context

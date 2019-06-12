@@ -9,6 +9,16 @@ class ArticlesController < ApplicationController
 		# - update
 		# - destroy
 
+	def index
+		@articles = Article.all
+	end
+
+	def show
+		# Use an instance variable (prefixed with @) to hold a reference to the article object.
+		# We do this because Rails will pass all instance variables to the view.
+		@article = Article.find(params[:id])
+	end
+
 	def new
 	end
 

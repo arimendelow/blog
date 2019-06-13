@@ -23,6 +23,10 @@ class ArticlesController < ApplicationController
 		@article = Article.new
 	end
 
+	def edit
+		@article = Article.new(article_params)
+	end
+
 	def create
 		# Initialize the article model with its respective attributes
 		@article = Article.new(article_params) # 'article' is the model, 'Article' is the class
@@ -33,6 +37,16 @@ class ArticlesController < ApplicationController
 			# Use 'render' here instead of 'redirect_to' so that the @article object is passed back to the new template when it is rendered.
 			# 'render' is done within the same request as the form submission, 'redirect_to' issues another request
 			render 'new'
+		end
+	end
+
+	def update
+		@article = Article.find(params[:id])
+
+		if @article.update(article_params)
+			redirect to @article
+		else
+			render 'edit'
 		end
 	end
 

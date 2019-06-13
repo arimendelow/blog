@@ -15,16 +15,4 @@
 	<%= render @article.comments %> <!-- render comments according to the '_comments.html.erb' template -->
 
 <h2>Add a comment:</h2>
-<%= form_with(model: [ @article, @article.comments.build ], local: true) do |form| %>
-	<p>
-		<%= form.label :commenter %><br>
-		<%= form.text_field :commenter %>
-	</p>
-	<p>
-		<%= form.label :body %><br>
-		<%= form.text_area :body %>
-	</p>
-	<p>
-		<%= form.submit %>
-	</p>
-<% end %>
+<%= render 'comments/form' %>

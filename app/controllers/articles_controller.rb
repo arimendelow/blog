@@ -50,6 +50,12 @@ class ArticlesController < ApplicationController
 		end
 	end
 
+	def destroy
+		@article = Article.find(params[:id])	# Find the article
+		@article.destroy						# Destroy it
+		redirect_to articles_path				# Redirect back to the list of articles
+	end
+
 	private # Make sure that it can't be called outside of its intended context
 		def article_params
 			# Attributes are automatically mapped to the respective database columns

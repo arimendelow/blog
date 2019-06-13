@@ -1,6 +1,6 @@
 # BLOG
 
-A blog, built using Ruby on Rails.
+A blog, built using Ruby on Rails according to [this guide](https://guides.rubyonrails.org/getting_started.html).
 
 ## Explanation of the contained files/folders:
 | File/Folder | Purpose                                                                                                  |

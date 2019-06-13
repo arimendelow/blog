@@ -3,5 +3,6 @@ class Article < ApplicationRecord
 	# for more about validations, see here: https://guides.rubyonrails.org/active_record_validations.html
 
 	# Relationship from Article to Comment: one article can have many comments
-	has_many :comments
+	# Also saying to destroy any comments when the article is deleted
+	has_many :comments, dependent: :destroy
 end

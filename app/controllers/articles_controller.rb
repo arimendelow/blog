@@ -20,7 +20,7 @@ class ArticlesController < ApplicationController
 	end
 
 	def new
-		@article = article.new
+		@article = Article.new
 	end
 
 	def create
@@ -30,6 +30,8 @@ class ArticlesController < ApplicationController
 		if @article.save # Returns a boolean indicating whether the article was saved
 			redirect_to @article
 		else
+			# Use 'render' here instead of 'redirect_to' so that the @article object is passed back to the new template when it is rendered.
+			# 'render' is done within the same request as the form submission, 'redirect_to' issues another request
 			render 'new'
 		end
 	end

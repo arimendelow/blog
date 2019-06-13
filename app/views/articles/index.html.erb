@@ -1,10 +1,10 @@
 <h1>Listing articles</h1>
-
+<%= link_to 'New article', new_article_path %>
 <table>
 	<tr>
 		<th>Title</th>
 		<th>Text</th>
-		<th></th>
+		<th colspan="3"></th>
 	</tr>
 
 	<% @articles.each do |article| %>
@@ -14,6 +14,8 @@
 			<!-- 'link_to' is one of Rails' built-in view helpers. It creates a hyperlink based on text to display and where to go. -->
 			<td><%= link_to 'Show', article_path(article) %></td> 
 			<td><%= link_to 'Edit', edit_article_path(article) %></td> 
+			<td><%= link_to 'Destroy', article_path(article), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+			<!-- the popup verification is done using JS - see here: https://guides.rubyonrails.org/working_with_javascript_in_rails.html -->
 		</tr>
 	<% end %>
 </table>

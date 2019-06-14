@@ -1,4 +1,8 @@
 class CommentsController < ApplicationController
+
+	# Only allow authenticated users to delete comments
+	http_basic_authenticate with name: "ari", password: "password", only: :destroy
+
 	# Generally, put actions in the controller in the following order:
 	# - index
 	# - show

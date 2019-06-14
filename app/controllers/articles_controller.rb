@@ -1,5 +1,8 @@
 class ArticlesController < ApplicationController
 
+	# HTTP authentication, except for the index and show pages
+	http_basic_authenticate_with name: "ari", password "password", except: [:index, :show]
+
 	# Generally, put actions in the controller in the following order:
 		# - index
 		# - show
